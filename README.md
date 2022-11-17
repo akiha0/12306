@@ -1,113 +1,102 @@
-### 12306 购票小助手
-#### python版本
-  - [ ] 2.7.10 - 2.7.15
-  - [x] 3.6 - 3.7.4
-  - [ ] 2.7.9
+#### 如果无法查看图片，可以访问：[Just My Socks SSR 机场使用教程](https://freepac.siterubix.com/just-my-socks-ssr-%e6%9c%ba%e5%9c%ba%e4%bd%bf%e7%94%a8%e6%95%99%e7%a8%8b/)
 
-#### 已有功能
-  - [x] 自动打码
-  - [x] 自动登录
-  - [x] 准点预售和捡漏
-  - [x] 智能候补
-  - [x] 邮件通知
-  - [x] server酱通知
+## 一、Just My Socks 介绍
 
-#### 依赖库
-  - 验证码目前可以本地识别，需要下载模型，放于项目根目录，全部代码来源于此项目 [传送门](https://github.com/zhaipro/easy12306)，表示感谢
-    ```
-      PS: 
-      1. 模型下载链接:https://pan.baidu.com/s/1rS155VjweWVWIJogakechA  密码:bmlm
-         群里面也可以下载
-      2. git仓库下载：https://github.com/testerSunshine/12306model.git
-    ```
-  - 自托管云打码服务器搭建：[12306_code_server](https://github.com/YinAoXiong/12306_code_server)
-    - 如果大家有空闲的服务器，可搭建之后再这个 [issues](https://github.com/testerSunshine/12306/issues/446) 里面填入自己的服务器(请注意服务器安全！)
-  - 项目依赖包查看 [requirements.txt](requirements.txt)
-  - 安装方法x:
-      - root用户(避免多python环境产生问题): `pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt`
-      - 非root用户（避免安装和运行时使用了不同环境）: `pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt`
+[Just My Socks官网](https://justmysocks3.net/members/aff.php?aff=4355)
 
-#### 项目使用说明
+Just My Socks 是搬瓦工官方出品的 ss 加速器，品质有保障！！！最低价格 $2.88 一个月，每月流量 100GB，提供多个域名供连接，并且保证可用，IP被封自动更换IP，不需要任何操作，也不需要其它费用。全部都是美西 CN2 GIA 线路，速度很快很稳定。现在 [Just My Socks](https://justmysocks3.net/members/aff.php?aff=4355) 已支持**支付宝**支付
 
-  - 服务器启动:
-      - 修改[配置](TickerConfig.py)文件
-        - 可以配置邮箱,配置邮箱的格式在[配置](TickerConfig.py)里面可以看到ex
-        - 可以配置server酱提醒（推荐）[配置教程](https://www.jianshu.com/p/8d10b5b9c4e3)
-        - 配置[配置](TickerConfig.py)文件的时候，需注意空格和遵循python语法格式
-      - 运行根目录`sudo python run.py`，即可开始
-  - 如果你的服务器安装了docker与docker-compose, 那么就可以通过`docker-compose`进行启动,`docker.sh`脚本对此进行了封装，可以通过如下命令进行启动
-      - 1、`sudo ./docker.sh run` #创建一个镜像并启动容器，如果镜像已经创建过了会直接启动容器。
-      - 2、`sudo ./docker.sh restart` #修改配置文件后，通过此名命令可重新加载容器运行
-      - 3、`sudo ./docker.sh rm` #删除容器
-      - 4、`sudo ./docker.sh drun` #后台运行容器
-      - 5、`sudo ./docker.sh logs` #在后台运行时，通过此命令查看运行的内容
-      - 注: 针对没有docker环境的同学提供了docker安装脚本(**<font color="red">centos7</font>**)
-            - `sudo ./docker_install_centos.sh`
-      - ~~注: 若只有docker没有docker-compose. 可通过`pip install docker-compose`进行下载~~
+**如果你就只想加速上个网，又担心购买 VPS 之后 IP 被墙、端口被封很麻烦，对折腾 VPS 什么的很苦恼，强烈推荐你入手，省心省时省力。**
 
-#### 目录对应说明
-  - agency - cdn代理
-  - config - 项目配置
-  - verify - 自动打码
-  - init - 项目主运行目录
-  - inter - 接口
-  - myException - 异常
-  - myUrllib  request网络请求库
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130427150-392207424.png)
 
-#### 思路图
-- ![image](uml/uml.png)
+**Just My Socks 优势：**
 
-#### 项目声明：
-  - 本软件只供学习交流使用，勿作为商业用途，交流群号
-    - 1群：286271084(已满)
-    - 2群：649992274(已满)
-    - 3群：632501142(已满)
-    - 4群: 606340519(已满)
-    - 5群: 948526733(已满)
-    - 7群: 660689659(已满)
-    - 8群: 620629239(已满)
-    - 6群: 608792930(未满)
-    - 9群: 693035807(未满)
-  - 请不要重复加群，一个群就可以了，把机会留给更多人
-  - **进群先看公告！！！进群先看公告！！！进群先看公告！！！ 重要的事情说三遍**
-  - 能为你抢到一张回家的票，是我最大的心愿
+1. 搬瓦工（BandwagonHost）出品，值得信赖，靠谱，**不会跑路。**
+2. 免去个人搭建代理流程，降低科*上网门槛，更适合 **初级/小白用户**。
+3. 全部采用CN2 GIA/CN2国际精品线路，**速度给力。**
+4. 提供8个 IP，后台自动检测 ，被墙自动更换，保证可以用，**省事省心**。
 
-#### 日志列子
-   - 成功log，如果是购票失败的，请带上失败的log给我，我尽力帮你调，也可加群一起交流，程序只是加速买票的过程，并不一定能买到票
-        ```
-        正在第355次查询  乘车日期: 2018-02-12  车次G4741,G2365,G1371,G1377,G1329 查询无票  代理设置 无  总耗时429ms
-        车次: G4741 始发车站: 上海 终点站: 邵阳 二等座:有
-        正在尝试提交订票...
-        尝试提交订单...
-        出票成功
-        排队成功, 当前余票还剩余: 359 张
-        正在使用自动识别验证码功能
-        验证码通过,正在提交订单
-        提交订单成功！
-        排队等待时间预计还剩 -12 ms
-        排队等待时间预计还剩 -6 ms
-        排队等待时间预计还剩 -7 ms
-        排队等待时间预计还剩 -4 ms
-        排队等待时间预计还剩 -4 ms
-        恭喜您订票成功，订单号为：EB52743573, 请立即打开浏览器登录12306，访问‘未完成订单’，在30分钟内完成支付！
-        ```
-#### 使用帮助(一些安装问题和使用反馈较多的问题)：
-   - 测试邮箱是否可用 [邮箱配置问题看issues](https://github.com/testerSunshine/12306/issues/107)
-   - 学生票issues [学生票修改](https://github.com/testerSunshine/12306/issues/47)
-   - 依赖安装不对的问题（ImportError）[requirements.txt问题](https://github.com/testerSunshine/12306/issues/91)
-   - 若快豆子疑问 [点我](https://github.com/testerSunshine/12306/issues/67)
-   - IOError: 【Errno 0】 Error 问题 [点我](https://github.com/testerSunshine/12306/issues/159)
-    
-   - 测试下单接口是否可用，有两个下单接口，随便用哪个都ok
-   - 如果下载验证码过期或者下载失败的问题，应该是12306封ip的策略，多重试几次，12306现在封服务器(阿里云和腾讯云)ip比较严重，尽量不要放在服务器里面
-   - 目前12306对服务器ip比较敏感，大家还是在自己家里挂着吧
-   - 自动更换ip软件目前已支持TPLINK和小米路由器，只限家庭网络[点我跳转](https://github.com/testerSunshine/AutoRouterIP)
+如果你是租 VPS 服务器自己搭 (ti) 子，但是又频繁被封 IP，那这个方案是很好的方案。
+
+因为有些地区运营商的原因频繁封 IP ，不管用哪家 VPS 都一样，基本上无解，用这个方法的话确实省事很多。
 
 
-#### 感谢一下小伙伴对本项目提供的帮助
-   - @sun7127@126.com
-   - @ 才
-   - @[MonsterTan](https://github.com/MonsterTan)
-   - 以及所有为此项目提供pr的同学
-#### 更新日志
-   - [更新日志](Update.md)
+
+## 二、Just My Socks 注册
+
+点击打开 [**Just My Socks 官网**]([Just My Socks官网](https://justmysocks3.net/members/aff.php?aff=4355)
+)
+
+先选择语言为中文，然后点击 **Browse ALL**
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130445606-911204348.png)
+
+ 
+
+**根据自己的需求选择套餐**
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130447781-462919830.png)
+
+ 
+
+**点击 购买， 进入结账页面** 
+
+选择付款方式，月付是 $2.88 ，包年或者季度付会便宜一点。
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130450357-392565104.png)
+
+ 
+
+输入 **[Just My Socks 优惠码]([Just My Socks官网](https://justmysocks3.net/members/aff.php?aff=4355)
+)** （**JMS9272283**） 点击检验代码   可享受 5.2% 的折扣
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130454544-1669234536.png)
+
+ 
+
+**然后点击 CheckOut 进行支付，这时候会让你填写一些基本信息，注册账号：**
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130457916-784249832.png)
+
+**勾选同意协议，完成订购即可**
+
+如果你点击完成订购一直无法跳转，是因为页面加载了 Google 验证，你可以开启网络代理刷新页面完成验证即可。
+
+如果没有代理则先注册账号完成人机验证，再购买即可。
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130500673-1917474686.png)
+
+购买完成在 **My Services**下面 可以看到shadowsocks 的**端口，密码和 IP 等信息**（一共8个IP）
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130502819-187994.png)
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130508888-1087718474.png)
+
+ 
+
+## 三、Just My Socks 使用
+
+just my socks 怎么用呢！其实就是用 SS  客户端连接
+
+各种客户端版本下载地址：[各版本SS客户端官方下载地址](https://github.com/xiaoming2028/kexueshangwang/releases)
+
+以Windows为例：
+
+端口和加密方式等信息对应填写**（如果客户端有下图中协议和混淆选项，则协议项选择 origin，混淆项 plain，没有则不用管）**
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130525596-1521676809.png)
+
+ 
+
+填写完点击确定
+
+在任务栏找到小飞机 并 **右键开启代理**  （PAC为部分流量走代理，全局为所有流量走代理）
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130528089-83987341.png)
+
+连接成功
+
+测试一下
+
+![](https://img2018.cnblogs.com/blog/1765496/202002/1765496-20200218130530870-1337906729.png)
